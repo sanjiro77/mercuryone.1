@@ -27,6 +27,7 @@ cors_domains =
 [update_manager]
 channel = dev
 refresh_interval = 168
+enable_auto_refresh = True
 
 [update_manager mainsail-config]
 type = git_repo
@@ -68,12 +69,6 @@ output_path = ~/timelapse/
 frame_path = /tmp/timelapse/
 ffmpeg_binary_path = /usr/bin/ffmpeg
 
-[update_manager print_area_bed_mesh]
-type = git_repo
-path = ~/print_area_bed_mesh
-origin = https://github.com/Turge08/print_area_bed_mesh.git
-is_system_service = False
-
 [update_manager KlipperScreen]
 type = git_repo
 path = ~/KlipperScreen
@@ -88,5 +83,22 @@ type = git_repo
 path = ~/klipper-backup
 origin = https://github.com/Staubgeborener/klipper-backup.git
 managed_services = moonraker
+primary_branch = main
+
+[update_manager led_effect]
+type = git_repo
+path = ~/klipper-led_effect
+origin = https://github.com/julianschill/klipper-led_effect.git
+is_system_service = False
+
+[file_manager]
+enable_object_processing = True
+
+[update_manager Klipper-Adaptive-Meshing-Purging]
+type = git_repo
+channel = dev
+path = ~/Klipper-Adaptive-Meshing-Purging
+origin = https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
+managed_services = klipper
 primary_branch = main
 
